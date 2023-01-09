@@ -6,7 +6,7 @@ pipeline {
     stages{
         stage('Build Docker Image'){
             steps{
-                bat "docker build . -t alpbugra/nodeapp:Dockerfile "
+                bat "docker build . -t alpbugra/nodeapp:latest "
             }
         }
         stage("Docker Hub Push"){
