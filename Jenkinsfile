@@ -10,11 +10,12 @@ pipeline {
             }
         }
         stage("Docker Hub Push"){
+            steps{
             withCredentials([string(credentialsId: 'docker-hub', variable: 'dockerHubPwd')]) {
-                bat "docker login -u alpbugra -p dockerHubPwd
+                bat "docker login -u alpbugra -p dockerHubPwd"
                 bat "docker push alpbugra/nodeapp:Dockerfile"
-}
-
+            }
+            }
         }
     }
 }
