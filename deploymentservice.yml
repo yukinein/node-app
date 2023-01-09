@@ -1,14 +1,21 @@
-apiVersion: batch/v1
-kind: Job
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: nodeapp
+  name: nodeapp-deployment
+  labels:
+    app: nodeapp
 spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodeapp
   template:
     metadata:
-      name: nodeapp-pod
+      labels:
+        app: nodeapp 
     spec:
       containers:
       - name: nodeapp
         image: alpbugra/nodeapp:latest
         imagePullPolicy: Always
-      restartPolicy: OnFailure
+      restartPolicy: Always
