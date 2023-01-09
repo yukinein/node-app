@@ -20,7 +20,7 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
-      restartPolicy: Always
+      restartPolicy: OnFailure
         
 ---
 
