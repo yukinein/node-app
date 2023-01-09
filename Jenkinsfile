@@ -6,13 +6,13 @@ pipeline {
     stages{
         stage('Build Docker Image'){
             steps{
-                sh "docker build . -t yukinein/node-app:${DOCKER_TAG} "
+                bat "docker build . -t yukinein/node-app:${DOCKER_TAG} "
             }
         }
     }
 }
 
 def getDockerTag(){
-    def tag  = sh script: 'git rev-parse HEAD', returnStdout: true
+    def tag  = bat script: 'git rev-parse HEAD', returnStdout: true
     return tag
 }
