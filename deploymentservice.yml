@@ -10,4 +10,3 @@ spec:
       containers:
       - name: nodeapp
         image: alpbugra/nodeapp
-      restartPolicy: Never
