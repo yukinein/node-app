@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nodeserver
-        image: alpbugra/nodeapp
+        image: alpbugra/pythonknn
         ports:
         - containerPort: 3000
         
