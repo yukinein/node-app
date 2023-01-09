@@ -1,14 +1,14 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: pythonknn
+  name: nodeapp
 spec:
   template:
     metadata:
-      name: pythonknn-pod
+      name: nodeapp-pod
     spec:
       containers:
-      - name: pythonknn
-        image: alpbugra/pythonknn
+      - name: nodeapp
+        image: alpbugra/nodeapp:latests
         imagePullPolicy: Always
       restartPolicy: OnFailure
