@@ -9,6 +9,6 @@ spec:
     spec:
       containers:
       - name: nodeapp
-        image: alpbugra/nodeapp:latests
+        image: alpbugra/nodeapp:latest
         imagePullPolicy: Always
       restartPolicy: OnFailure
