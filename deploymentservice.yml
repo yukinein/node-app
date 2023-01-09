@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: twitterapp-deployment
+  name: example-deployment
   labels:
-    app: twitterapp
+    app: example
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: twitterapp
+      app: example
   template:
     metadata:
       labels:
-        app: twitterapp
+        app: example
     spec:
       containers:
-      - name: twitterapp
-        image: alpbugra/twitterapp:latest
+      - name: example
+        image: alpbugra/example:latest
         imagePullPolicy: Always
       restartPolicy: Always
