@@ -11,6 +11,7 @@ spec:
       - name: nodeapp
         image: alpbugra/nodeapp
         restartPolicy: Never
+        imagePullPolicy: Always
         ports:
         - containerPort: 3000
         
