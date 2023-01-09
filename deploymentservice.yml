@@ -5,7 +5,7 @@ metadata:
 spec:
   template:
     metadata:
-      name: nodeapp-pod
+      name: nodeapp
     spec:
       containers:
       - name: nodeapp
