@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nodeapp
-        image: alpbugra/pythonknn:latest
+        image: alpbugra/nodeapp:latest
         imagePullPolicy: Always
       restartPolicy: Always
         
