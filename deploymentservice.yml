@@ -10,8 +10,8 @@ spec:
       containers:
       - name: nodeapp
         image: alpbugra/nodeapp
-        restartPolicy: Never
         imagePullPolicy: Always
+      restartPolicy: Never
         ports:
         - containerPort: 3000
         
