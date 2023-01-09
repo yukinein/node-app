@@ -6,7 +6,7 @@ pipeline {
     stages{
         stage('Build Docker Image'){
             steps{
-                bat "docker build . -t yukinein/node-app:${DOCKER_TAG} "
+                bat "docker build . -t yukinein/nodeapp:${DOCKER_TAG} "
             }
         }
     }
