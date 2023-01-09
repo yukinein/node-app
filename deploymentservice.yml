@@ -1,39 +1,14 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: batch/v1
+kind: Job
 metadata:
-  name: nodeapp-deployment
-  labels:
-    app: nodeapp
+  name: pythonknn
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: nodeapp
   template:
     metadata:
-      labels:
-        app: nodeapp 
+      name: pythonknn-pod
     spec:
       containers:
-      - name: nodeapp
-        image: alpbugra/nodeapp:latest
+      - name: pythonknn
+        image: alpbugra/pythonknn
         imagePullPolicy: Always
-        ports:
-        - containerPort: 3000
-      restartPolicy: Always
-        
----
-
-apiVersion: v1
-kind: Service
-metadata:
-  name: nodeapp-service
-spec:
-  selector:
-    app: nodeapp 
-  type: LoadBalancer
-  ports:
-  - protocol: TCP
-    port: 5000
-    targetPort: 3000
-    nodePort: 31110
+      restartPolicy: OnFailure
