@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx
+        image: alpbugra/nodeapp
         ports:
         - containerPort: 3000
         
