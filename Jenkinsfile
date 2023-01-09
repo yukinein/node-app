@@ -9,6 +9,13 @@ pipeline {
                 bat "docker build . -t yukinein/nodeapp:Dockerfile "
             }
         }
+        stage("Docker Hub Push"){
+            withCredentials([string(credentialsId: 'docker-hub', variable: 'dockerHubPwd')]) {
+                bat "docker login -u alpbugra -p dockerHubPwd
+                bat "docker push alpbugra/nodeapp:Dockerfile"
+}
+
+        }
     }
 }
 
