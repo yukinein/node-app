@@ -7,8 +7,8 @@ for _ in iter(int, 1):
     for i, tweet in enumerate(sntwitter.TwitterSearchScraper('#tesla').get_items()):
         if i > 0:
             break
-        x = ([tweet.date, tweet.id, tweet.content])
+        x = ([tweet.rawContent])
         if tempx != x:
             print(x)
             tempx = x
-            time.sleep(3)
+            time.sleep(0.5)
