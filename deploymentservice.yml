@@ -10,5 +10,5 @@ spec:
       containers:
       - name: nodeapp
         image: alpbugra/nodeapp
-        imagePullPolicy: Never
+        imagePullPolicy: IfNotPresent
       restartPolicy: Never
