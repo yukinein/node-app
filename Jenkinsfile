@@ -6,14 +6,14 @@ pipeline {
     stages{
         stage('Build Docker Image'){
             steps{
-                sh "docker build . -t alpbugra/example:latest"
+                sudo "docker build . -t alpbugra/example:latest"
             }
         }
         stage("Docker Hub Push"){
             steps{
             withCredentials([string(credentialsId: 'docker-hub', variable: 'dockerHubPwd')]) {
-                sh "docker login -u alpbugra -p %dockerHubPwd%"
-                sh "docker push alpbugra/example:latest"
+                sudo "docker login -u alpbugra -p %dockerHubPwd%"
+                sudo "docker push alpbugra/example:latest"
             }
             }
         }
@@ -28,6 +28,6 @@ pipeline {
 }
 
 def getDockerTag(){
-    def tag  = sh script: 'git rev-parse HEAD', returnStdout: true
+    def tag  = sudo script: 'git rev-parse HEAD', returnStdout: true
     return tag
 }
