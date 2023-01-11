@@ -20,7 +20,7 @@ pipeline {
         stage('Deploying App to Kubernetes') {
       steps {
         script {
-          bat "kubectl delete deploy example-deployment"
+          bat "kubectl delete --all deploy"
           bat "kubectl delete --all pods"
           kubernetesDeploy(configs: "deploymentservice.yml", kubeconfigId: "kubernetes")
         }
