@@ -12,7 +12,7 @@ pipeline {
         stage("Docker Hub Push"){
             steps{
             withCredentials([string(credentialsId: 'docker-hub', variable: 'dockerHubPwd')]) {
-                sh "docker login -u alpbugra -p {dockerHubPwd}"
+                sh "docker login -u alpbugra -p ${dockerHubPwd}"
                 sh "docker push alpbugra/example:latest"
             }
             }
