@@ -6,14 +6,14 @@ pipeline {
     stages{
         stage('Build Docker Image'){
             steps{
-                bat "docker build . -t alpbugra/example:latest"
+                sh "docker build . -t alpbugra/example:latest"
             }
         }
         stage("Docker Hub Push"){
             steps{
             withCredentials([string(credentialsId: 'docker-hub', variable: 'dockerHubPwd')]) {
-                bat "docker login -u alpbugra -p %dockerHubPwd%"
-                bat "docker push alpbugra/example:latest"
+                sh "docker login -u alpbugra -p %dockerHubPwd%"
+                sh "docker push alpbugra/example:latest"
             }
             }
         }
